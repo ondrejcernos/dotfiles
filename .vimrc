@@ -87,9 +87,6 @@ nnoremap k gk
 " hitting ; is easier than :
 nnoremap ; :
 
-" save when focus is lost
-au FocusLost * :wa
-
 " rehardwrap paragraph of text
 nnoremap <leader>q gqip
 
@@ -98,3 +95,16 @@ nnoremap <leader>v V`]
 
 " open vimrc in split window
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" use jj to escape from insert mode
+inoremap jj <ESC>
+
+" split windows settings
+"
+" open new vertical split and switch to it
+nnoremap <leader>w <C-w>v<C-w>l
+" moving aroung splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
