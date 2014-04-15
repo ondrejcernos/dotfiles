@@ -73,19 +73,8 @@ set formatoptions=qrn1
 set colorcolumn=85
 
 " teach yourself not to use insert mode for text navigation
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
-
-" hitting ; is easier than :
-nnoremap ; :
 
 " rehardwrap paragraph of text
 nnoremap <leader>q gqip
@@ -96,9 +85,6 @@ nnoremap <leader>v V`]
 " open vimrc in split window
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
-" use jj to escape from insert mode
-inoremap jj <ESC>
-
 " split windows settings
 "
 " open new vertical split and switch to it
@@ -108,3 +94,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" quote, unquote word
+:map <Leader>q" gewi"<Esc>ea"<Esc>
+:map <Leader>q' gewi'<Esc>ea'<Esc>
+:map <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
